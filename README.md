@@ -1,4 +1,4 @@
-![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/w/Oracles-Bakery/ORBMammetBot/Development?authorFilter=VAMProductions&style=flat&logo=python&logoColor=%233776AB&label=Snakes%20Over%20Time&labelColor=%23161616&color=%233776AB)
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/w/Oracles-Bakery/ORBMammetBot/main?authorFilter=VAMProductions&style=flat&logo=python&logoColor=%233776AB&label=Snakes%20Over%20Time&labelColor=%23161616&color=%233776AB)
 
 ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/Oracles-Bakery/ORBMammetBot?style=flat&labelColor=161616&color=00be5a)
 ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr/Oracles-Bakery/ORBMammetBot?style=flat&label=pull%20reqs&labelColor=161616&color=642d96)
@@ -39,7 +39,7 @@ Lorum? I barely ipsum!
 | Raid Helper                                     | v2.0.0    | 🔵    | Setup for in-game events handling, with per-player class tracking and role assignment |
 | Map Generator                                   | vX.0.0    | ⚪    | Get a map of a duty's loot chests, mob spawns, or an area's loot, gathering, or fate locations |
 | Support Tickets                                 | vX.0.0    | ⚪    | Support requests and GM messaging system with transcript generation and isolated text channel creation |
-| FFXIV world/lobby/login status updates          | vX.0.0    | 🔵    | Alerts about the FF servers for patch day ane emergency maintenance |
+| FFXIV world/lobby/login status updates          | vX.0.0    | 🔵    | Alerts about the FF servers for patch day and emergency maintenance |
 | FFXIV game announcements                        | vX.0.0    | 🔵    | Alerts about mogtome events, patch notes, etc... |
 | Discord web dashboard                           | vX.0.0    | ⚪    | Owner settings, role sync, GUI for events and raids |
 | Modular plug-in system                          | vX.0.0    | ⚪    | Easier expansion for open-source crowd |
