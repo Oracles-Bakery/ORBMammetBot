@@ -12,7 +12,7 @@ VIEW_CONFIGS = {
 
 
 class RoleCategoryButton(ui.Button):
-    def __init__(self, label: str, custom_id: str):
+    def __init__(self, label: str, custom_id: str, bot):
         self.display_label = label  # Preserve for later use
         super().__init__(label=label, style=discord.ButtonStyle.primary, custom_id=custom_id)
 
@@ -42,7 +42,7 @@ class RoleCategoryButton(ui.Button):
 
 
 class RoleCategoryView(ui.View):
-    def __init__(self):
+    def __init__(self, bot):
         super().__init__(timeout=None)
         for custom_id, config in VIEW_CONFIGS.items():
-            self.add_item(RoleCategoryButton(label=config["label"], custom_id=custom_id))
+            self.add_item(RoleCategoryButton(label=config["label"], custom_id=custom_id, bot=bot))

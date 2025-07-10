@@ -60,7 +60,7 @@ class RoleSetupCommand(commands.Cog):
             ),
             color=discord.Color.blurple()
         )
-        view = roleselection.RoleCategoryView()
+        view = roleselection.RoleCategoryView(self.bot)
 
         try:
             message = await channel.send(embed=embed, view=view)
