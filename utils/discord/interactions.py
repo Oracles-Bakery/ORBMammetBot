@@ -95,10 +95,10 @@ async def assign_roles(interaction: discord.Interaction, selected_names: list[st
             await member.add_roles(*selected_roles, reason=f"Selected {category} roles")
 
     except discord.Forbidden:
-        await interaction.response.send_message("I don't have permission to update some roles.", ephemeral=True)
+        await interaction.followup.send("I don't have permission to update some roles.", ephemeral=True)
         return
     except Exception as e:
-        await interaction.response.send_message(f"Error updating roles: {e}", ephemeral=True)
+        await interaction.followup.send(f"Error updating roles: {e}", ephemeral=True)
         return
 
     await interaction.followup.send(
