@@ -4,10 +4,10 @@ from utils.discord.interactions import create_dropdown_view
 
 # Better format: custom_id -> dict of display settings
 VIEW_CONFIGS = {
-    "ff_activities": {"category": "FF Activities", "placeholder": "Select activities...", "label": "FF Activities"},
-    "ff_roles": {"category": "FF Role", "placeholder": "Select roles...", "label": "FF Roles"},
-    "pronouns": {"category": "Pronouns", "placeholder": "Select pronouns...", "label": "Pronouns"},
-    "interests": {"category": "Interests", "placeholder": "Select interests...", "label": "Interests"},
+    "ff_activities": {"category": "ff_activities", "placeholder": "Select activities...", "label": "FF Activities"},
+    "ff_roles": {"category": "ff_roles", "placeholder": "Select roles...", "label": "FF Roles"},
+    "pronouns": {"category": "pronouns", "placeholder": "Select pronouns...", "label": "Pronouns"},
+    "interests": {"category": "interests", "placeholder": "Select interests...", "label": "Interests"},
 }
 
 
