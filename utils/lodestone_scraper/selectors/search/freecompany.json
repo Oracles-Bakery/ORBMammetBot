@@ -1,0 +1,69 @@
+{
+    "ROOT": {
+        "selector": ".ldst__window"
+    },
+    "ENTRY": {
+        "ROOT": {
+            "selector": "div.entry",
+            "multiple": true
+        },
+        "CREST_LAYERS": {
+            "BOTTOM": {
+                "selector": ".entry__freecompany__crest__image > img:nth-child(1)",
+                "attribute": "src"
+            },
+            "MIDDLE": {
+                "selector": ".entry__freecompany__crest__image > img:nth-child(2)",
+                "attribute": "src"
+            },
+            "TOP": {
+                "selector": ".entry__freecompany__crest__image > img:nth-child(3)",
+                "attribute": "src"
+            }
+        },
+        "ID": {
+            "selector": ".entry__block",
+            "attribute": "href",
+            "regex": "/lodestone/freecompany/(?P<ID>\\d*)/"
+        },
+        "GRAND_COMPANY": {
+            "selector": ".entry__world:nth-child(1)"
+        },
+        "NAME": {
+            "selector": ".entry__name"
+        },
+        "SERVER": {
+            "selector": ".entry__world:nth-child(3)",
+            "regex": "(?P<World>\\w*)\\s+\\[(?P<DC>\\w*)\\]"
+        },
+        "ACTIVE": {
+            "selector": "li.entry__freecompany__fc-active:nth-child(4)",
+            "regex": "Active:\\s+(?P<State>\\w*)"
+        },
+        "ACTIVE_MEMBERS": {
+            "selector": ".entry__freecompany__fc-member"
+        },
+        "RECRUITMENT_OPEN": {
+            "selector": "li.entry__freecompany__fc-active:nth-child(5)",
+            "regex": "Recruitment:\\s+(?P<State>\\w*)"
+        },
+        "ESTATE_BUILT": {
+            "selector": ".entry__freecompany__fc-housing"
+        },
+        "FORMED": {
+            "selector": ".entry__freecompany__fc-day > script",
+            "regex": ".*ldst_strftime\\((?P<Timestamp>\\d*)"
+        }
+    },
+    "PAGE_INFO": {
+        "selector": "ul.btn__pager:nth-child(6) > li:nth-child(3)",
+        "regex": "\\D*(?P<CurrentPage>\\d+)\\D*(?P<NumPages>\\d+)"
+    },
+    "LIST_NEXT_BUTTON": {
+        "selector": "ul.btn__pager > li:nth-child(4) > a:nth-child(1)",
+        "attribute": "href"
+    },
+    "NO_RESULTS_FOUND": {
+        "selector": ".parts__zero"
+    }
+}

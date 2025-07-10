@@ -1,0 +1,51 @@
+{
+    "ROOT": {
+        "selector": ".ldst__window"
+    },
+    "ENTRY": {
+        "ROOT": {
+            "selector": "li.entry",
+            "multiple": true
+        },
+        "AVATAR": {
+            "selector": ".entry__chara__face > img",
+            "attribute": "src"
+        },
+        "ID": {
+            "selector": ".entry__bg",
+            "attribute": "href",
+            "regex": "/lodestone/character/(?P<ID>\\d*)/"
+        },
+        "NAME": {
+            "selector": ".entry__name"
+        },
+        "FC_RANK": {
+            "selector": ".entry__freecompany__info > li:nth-child(1) > span"
+        },
+        "FC_RANK_ICON": {
+            "selector": ".entry__freecompany__info > li:nth-child(1) > img",
+            "attribute": "src"
+        },
+        "RANK": {
+            "selector": ".entry__freecompany__info > .js__tooltip",
+            "attribute": "data-tooltip",
+            "regex": "/ (?P<RankName>.+)"
+        },
+        "RANK_ICON": {
+            "selector": ".entry__freecompany__info > .js__tooltip > img",
+            "attribute": "src"
+        },
+        "SERVER": {
+            "selector": ".entry__world",
+            "regex": "(?P<World>\\w*)\\s+\\[(?P<DC>\\w*)\\]"
+        }
+    },
+    "PAGE_INFO": {
+        "selector": "ul.btn__pager:nth-child(4) > li:nth-child(3)",
+        "regex": "\\D*(?P<CurrentPage>\\d+)\\D*(?P<NumPages>\\d+)"
+    },
+    "LIST_NEXT_BUTTON": {
+        "selector": "ul.btn__pager:nth-child(4) > li:nth-child(4) > a:nth-child(1)",
+        "attribute": "href"
+    }
+}

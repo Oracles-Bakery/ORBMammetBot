@@ -1,0 +1,18 @@
+{
+    "MOUNTS": {
+        "ROOT": {
+            "selector": ".mount__list__item",
+            "multiple": true
+        },
+        "NAME": {
+            "selector": ".mount__name"
+        },
+        "ICON": {
+            "selector": ".mount__list__icon__image",
+            "attribute": "src"
+        }
+    },
+    "TOTAL": {
+        "selector": ".minion__sort__total > span:nth-child(1)"
+    }
+}
