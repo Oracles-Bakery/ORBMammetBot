@@ -1,6 +1,6 @@
 import discord
 from discord import ui
-from utils.discord.interactions import create_dropdown_view, assign_roles
+from utils.discord.interactions import create_dropdown_view
 
 # Better format: custom_id -> dict of display settings
 VIEW_CONFIGS = {
@@ -12,17 +12,18 @@ VIEW_CONFIGS = {
 
 
 class RoleCategoryButton(ui.Button):
-    def __init__(self, label: str, custom_id: str, bot):
+    def __init__(self, label: str, custom_id: str):
         self.display_label = label  # Preserve for later use
         super().__init__(label=label, style=discord.ButtonStyle.primary, custom_id=custom_id)
 
     async def callback(self, interaction: discord.Interaction):
         config = VIEW_CONFIGS.get(self.custom_id)
+        
         if config:
             category = config.get("category")
             placeholder = config.get("placeholder")
             try:
-                view = await create_dropdown_view(category, placeholder, interaction.user, bot)
+                view = await create_dropdown_view(category, placeholder, interaction.user, interaction.client)
             except ValueError as e:
                 await interaction.response.send_message(str(e), ephemeral=True)
                 return

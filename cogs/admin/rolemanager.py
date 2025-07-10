@@ -10,7 +10,7 @@ logger = settings.logging.getLogger("bot")
 
 class RoleSetupCommand(commands.Cog):
     def __init__(self, bot):
-        self.bot = bot
+        self.bot = commands.bot
 
     @commands.command(name="setuproles")
     @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "USER_BOT_OWNER")
