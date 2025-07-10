@@ -46,4 +46,4 @@ class RoleCategoryView(ui.View):
     def __init__(self, bot):
         super().__init__(timeout=None)
         for custom_id, config in VIEW_CONFIGS.items():
-            self.add_item(RoleCategoryButton(label=config["label"], custom_id=custom_id, bot=bot))
+            self.add_item(RoleCategoryButton(label=config["label"], custom_id=custom_id))
