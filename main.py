@@ -146,7 +146,7 @@ async def run():
             bot.loop.create_task(heartbeat_task())
             bot.heartbeat_started = True # type: ignore     like it's literally an if not come on
 
-        logger.info("Ready reported as %s with UID %s", bot.user, bot.user.id)
+        logger.info("Ready reported as %s with UID %s", bot.user, bot.user.id) # type: ignore
         logger.info("Loaded %s commands in %s cogs", len(bot.commands), len(bot.cogs))
 
         await restore_persistent_views(bot)
