@@ -4,8 +4,8 @@ CREATE TABLE IF NOT EXISTS consistentChannels (
     purpose TEXT UNIQUE NOT NULL,  -- e.g., 'general', 'announcements', etc.
     channel_id BIGINT NOT NULL, -- Channel the message is in
     message_id BIGINT PRIMARY KEY, -- Message pertaining to the function
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    edited_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_atTIMESTAMP WITH TIME ZONEDEFAULT CURRENT_TIMESTAMP,
+    edited_atTIMESTAMP WITH TIME ZONEDEFAULT CURRENT_TIMESTAMP
 );
 
 -- Discord roles storage and the accompanying information
@@ -16,15 +16,15 @@ CREATE TABLE IF NOT EXISTS discord_roles (
     category TEXT,  -- e.g., 'FF Role', 'FC Rank', 'Interests', etc.
     emoji_id BIGINT, -- ID of the application emoji
     unicode_emoji TEXT,  -- For custom emojis
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    edited_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_atTIMESTAMP WITH TIME ZONEDEFAULT CURRENT_TIMESTAMP,
+    edited_atTIMESTAMP WITH TIME ZONEDEFAULT CURRENT_TIMESTAMP
 );
 
 -- Bot heartbeat tracking
 CREATE TABLE IF NOT EXISTS bot_status (
     id SERIAL PRIMARY KEY, -- UID
     status TEXT NOT NULL, -- Status message of the bot
-    last_heartbeat TIMESTAMP NOT NULL, -- date of the heartbeat
+    last_heartbeatTIMESTAMP WITH TIME ZONENOT NULL, -- date of the heartbeat
     reason TEXT -- Optional text for alerting V to a bad crash
 );
 
@@ -36,8 +36,8 @@ CREATE TABLE IF NOT EXISTS user_data (
     discord_name TEXT NOT NULL, -- Name on discord at time of entry
     preferred_name TEXT NOT NULL, -- Bot can address people how they want to be addressed this way
     steam_id BIGINT, -- Steam ID for later, feels useful u kno
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    edited_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_atTIMESTAMP WITH TIME ZONEWITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    edited_atTIMESTAMP WITH TIME ZONEWITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Warnings and moderation notes
@@ -49,9 +49,9 @@ CREATE TABLE IF NOT EXISTS user_warnings (
     warning_date DATE DEFAULT CURRENT_TIMESTAMP, -- Time issued
     warning_title TEXT NOT NULL, -- Warning title
     warning_reason TEXT NOT NULL, -- Full warning text
-    FOREIGN KEY (user_warned) REFERENCES user_data (discord_id) ON DELETE CASCADE, -- Links warnings to the user
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    edited_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_atTIMESTAMP WITH TIME ZONEDEFAULT CURRENT_TIMESTAMP,
+    edited_atTIMESTAMP WITH TIME ZONEDEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_warned) REFERENCES user_data (discord_id) ON DELETE CASCADE -- Links warnings to the user
 );
 
 -- Core character data
@@ -63,9 +63,9 @@ CREATE TABLE IF NOT EXISTS xiv_char (
     surname TEXT, -- Character's surname
     server_name TEXT, -- Server character resides on
     data_center_name TEXT, -- Data center? Centre? I can never remember.
-    FOREIGN KEY (discord_id) REFERENCES user_data (discord_id) ON DELETE CASCADE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    edited_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_atTIMESTAMP WITH TIME ZONEDEFAULT CURRENT_TIMESTAMP,
+    edited_atTIMESTAMP WITH TIME ZONEDEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (discord_id) REFERENCES user_data (discord_id) ON DELETE CASCADE
 );
 
 -- Character job levels and progression
@@ -76,9 +76,9 @@ CREATE TABLE IF NOT EXISTS xiv_jobs (
     job_role TEXT NOT NULL, -- 'Tank', 'Barrier', 'Magic', 'Limited', 'Gatherer', 'Phantom' etc
     category TEXT NOT NULL, -- 'DoW', 'DoM', 'DoH', 'DoL'
     version_added TEXT NOT NULL, -- e.g., '2.0', '3.0', etc.
-    sort_order INTEGER DEFAULT 0 -- Makes list human readable,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    edited_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    sort_order INTEGER DEFAULT 0, -- Makes list human readable,
+    created_atTIMESTAMP WITH TIME ZONEDEFAULT CURRENT_TIMESTAMP,
+    edited_atTIMESTAMP WITH TIME ZONEDEFAULT CURRENT_TIMESTAMP
 );
 
 -- Dynamic character ranks
@@ -87,10 +87,10 @@ CREATE TABLE IF NOT EXISTS xiv_char_field_ops (
     lodestone_id BIGINT, -- Lodestone user number
     rank_type TEXT, -- e.g., 'EUREKA', 'BOZJA', etc.
     rank_value INTEGER , -- Level
+    created_atTIMESTAMP WITH TIME ZONEDEFAULT CURRENT_TIMESTAMP,
+    edited_atTIMESTAMP WITH TIME ZONEDEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (lodestone_id, rank_type),
-    FOREIGN KEY (lodestone_id) REFERENCES xiv_char (lodestone_id) ON DELETE CASCADE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    edited_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    FOREIGN KEY (lodestone_id) REFERENCES xiv_char (lodestone_id) ON DELETE CASCADE
 );
 
 -- Dynamic character job levels
@@ -99,10 +99,10 @@ CREATE TABLE IF NOT EXISTS xiv_char_jobs (
     lodestone_id BIGINT, -- Lodestone character number
     job_name TEXT,  -- 'GLD', 'PLD', etc.
     job_level INTEGER, -- Level
+    created_atTIMESTAMP WITH TIME ZONEDEFAULT CURRENT_TIMESTAMP,
+    edited_atTIMESTAMP WITH TIME ZONEDEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (lodestone_id, job_name),
-    FOREIGN KEY (lodestone_id) REFERENCES xiv_char (lodestone_id) ON DELETE CASCADE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    edited_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    FOREIGN KEY (lodestone_id) REFERENCES xiv_char (lodestone_id) ON DELETE CASCADE
 );
 
 -- Crafting tome progression
@@ -111,10 +111,10 @@ CREATE TABLE IF NOT EXISTS xiv_char_crafting (
     lodestone_id BIGINT, -- Lodestone character number
     craft_type TEXT,  -- e.g., 'CRPDMATERIA', 'BSMMSTRBK01', etc.
     craft_value INTEGER DEFAULT 0,
+    created_atTIMESTAMP WITH TIME ZONEDEFAULT CURRENT_TIMESTAMP,
+    edited_atTIMESTAMP WITH TIME ZONEDEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (lodestone_id, craft_type),
-    FOREIGN KEY (lodestone_id) REFERENCES xiv_char (lodestone_id) ON DELETE CASCADE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    edited_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    FOREIGN KEY (lodestone_id) REFERENCES xiv_char (lodestone_id) ON DELETE CASCADE
 );
 
 -- Community events and activities
@@ -124,8 +124,8 @@ CREATE TABLE IF NOT EXISTS xiv_community_events (
     event_description TEXT, -- Event description for embeds etc
     event_date DATE, -- Date event starts
     event_time TIME, -- Time event starts
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    edited_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created_atTIMESTAMP WITH TIME ZONEDEFAULT CURRENT_TIMESTAMP,
+    edited_atTIMESTAMP WITH TIME ZONEDEFAULT CURRENT_TIMESTAMP
 );
 
 -- Discord donated keys
@@ -135,6 +135,6 @@ CREATE TABLE IF NOT EXISTS discord_donated_keys (
     encrypted_password TEXT NOT NULL, -- Password to unlock (encrypted)
     created_by BIGINT, -- discord user ID
     redeemed_by BIGINT, -- discord user ID
-    created_at TIMESTAMP DEFAULT NOW(),
+    created_atTIMESTAMP WITH TIME ZONEDEFAULT NOW(),
     redeemed_at TIMESTAMP
 );

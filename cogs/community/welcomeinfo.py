@@ -2,7 +2,7 @@ import discord
 from discord import app_commands
 from discord.ext import commands
 from utils.colour import parse_colour_string
-from datetime import datetime
+from datetime import datetime, timezone
 from utils.database import postgres
 
 # ───────────────────────────────────────────────────────────────
@@ -41,7 +41,7 @@ class ProfileSetup(commands.Cog):
             encoded_colour = encode_colour(color_raw)
             colour = parse_colour_string(encoded_colour)
 
-            join_date = user.joined_at.isoformat() if hasattr(user, "joined_at") and user.joined_at else datetime.utcnow().isoformat()
+            join_date = user.joined_at.isoformat() if hasattr(user, "joined_at") and user.joined_at else datetime.now(timezone.utc)
             discord_name = user.name
 
             await postgres.execute(
