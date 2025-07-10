@@ -13,7 +13,7 @@ class RoleMultiSelect(ui.Select):
         super().__init__(
             placeholder=f"Assign roles to {CATEGORY_DICT[category]['label']}",
             min_values=0,
-            max_values=len(options),
+            max_values=min(len(options), 25),  # Max allowed, might as well use em
             options=options
         )
         self.category = category
@@ -22,10 +22,20 @@ class RoleMultiSelect(ui.Select):
     async def callback(self, interaction: Interaction):
         await self.callback_fn(interaction, self.values, self.category)
 
+# Break the list up
+def chunked(lst, size):
+    for i in range(0, len(lst), size):
+        yield lst[i:i + size]
+
+# Fixed to use chunks of data instead
 class CategoryRoleAssignView(ui.View):
     def __init__(self, roles, category, callback):
         super().__init__(timeout=300)
-        self.add_item(RoleMultiSelect(roles, category, callback))
+        for idx, role_chunk in enumerate(chunked(roles, 25)):
+            placeholder = f"Assign roles to {CATEGORY_DICT[category]['label']}"
+            if len(roles) > 25:
+                placeholder += f" (Page {idx+1})"
+            self.add_item(RoleMultiSelect(role_chunk, category, callback))
 
 class RoleCategorySetup(commands.Cog):
     def __init__(self, bot):
