@@ -14,16 +14,15 @@ class RoleSetupCommand(commands.Cog):
 
     @commands.command(name="setuproles")
     @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "USER_BOT_OWNER")
-    async def setup_roles(self, ctx, channel: discord.TextChannel.id = settings.CHANNEL_ROLESELECTION): # type: ignore
+    async def setup_roles(self, ctx):
         """Set up the role selection message in the roleselection channel"""
         
+        channel_id = settings.CHANNEL_ROLESELECTION  # This is your integer channel ID
+        # Fetch the channel object from the current guild
+        channel = ctx.guild.get_channel(channel_id)
         if channel is None:
-            channel = ctx.channel
-        # Check if the channel is valid
-        if not channel.permissions_for(ctx.guild.me).send_messages:
-            await ctx.send(f"I can't send messages in {channel.mention}. Choose another channel.")
+            await ctx.send(f"Could not find a channel with ID `{channel_id}` in this server.")
             return
-
 
         # Step 1: Check if DB already has a registered role selection message
         existing_entry = await postgres.get_consistent_channel_by_purpose(purpose="roleselection")
