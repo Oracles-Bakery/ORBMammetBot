@@ -114,7 +114,7 @@ async def restore_persistent_views(bot):
 
             # You can add more views by purpose here
             if purpose == "roleselection":
-                view = roleselection.RoleCategoryView()
+                view = roleselection.RoleCategoryView(bot)
             else:
                 logger.info(f"No view restoration handler for {purpose}, skipping")
                 continue
