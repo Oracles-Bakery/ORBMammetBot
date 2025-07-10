@@ -13,7 +13,7 @@ class RoleSetupCommand(commands.Cog):
         self.bot = bot
 
     @commands.command(name="setuproles")
-    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "BOT_OWNER")
+    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "USER_BOT_OWNER")
     async def setup_roles(self, ctx, channel: discord.TextChannel = settings.CHANNEL_ROLESELECTION): # type: ignore
         """Set up the role selection message in the roleselection channel"""
         

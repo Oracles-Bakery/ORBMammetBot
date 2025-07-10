@@ -24,7 +24,7 @@ class Admin(commands.Cog):
         self.bot = bot
 
     @commands.command(name='adminhelp')
-    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "BOT_OWNER")
+    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "USER_BOT_OWNER")
     async def admin_help(self, ctx, command_name: str = None):
         """
         Show detailed admin help from admin_help/*.md files.
@@ -45,7 +45,7 @@ class Admin(commands.Cog):
             await ctx.send(f"No admin help found for `{command_name}`.")
 
     @commands.command(name="listmodules")
-    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "BOT_OWNER")
+    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "USER_BOT_OWNER")
     async def list_modules(self, ctx: commands.Context):
         cogs = list(self.bot.cogs.keys())
         if not cogs:
@@ -54,7 +54,7 @@ class Admin(commands.Cog):
             await ctx.send(f"Loaded modules: {', '.join(cogs)}")
 
     @commands.command(name="loadallmodules")
-    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "BOT_OWNER")
+    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "USER_BOT_OWNER")
     async def load_all_modules(self, ctx):
         base_dir = pathlib.Path(settings.COGS_DIR)
         loaded, failed = 0, []
@@ -76,7 +76,7 @@ class Admin(commands.Cog):
 
     # Command only available to leadership role. For loading any unloaded cogs
     @commands.command(name="loadmodule")
-    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "BOT_OWNER")
+    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "USER_BOT_OWNER")
     async def load_module(self, ctx, category: str, modname: str):
         module = f"cogs.{category}.{modname}"
         try:
@@ -86,7 +86,7 @@ class Admin(commands.Cog):
             await ctx.send(f"Failed to load `{module}`: `{type(e).__name__}: {e}`")
 
     @commands.command(name="unloadmodule")
-    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "BOT_OWNER")
+    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "USER_BOT_OWNER")
     async def unload_module(self, ctx, category: str, modname: str):
         module = f"cogs.{category}.{modname}"
         try:
@@ -96,7 +96,7 @@ class Admin(commands.Cog):
             await ctx.send(f"Failed to unload `{module}`: `{type(e).__name__}: {e}`")
 
     @commands.command(name="reloadmodule")
-    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "BOT_OWNER")
+    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "USER_BOT_OWNER")
     async def reload_module(self, ctx, category: str, modname: str):
         module = f"cogs.{category}.{modname}"
         try:
@@ -115,7 +115,7 @@ class Admin(commands.Cog):
 
 
     @commands.command(name="synccommands")
-    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "BOT_OWNER")
+    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "USER_BOT_OWNER")
     async def sync_commands(self, ctx: commands.Context):
         try:
             guild_id = settings.GUILD_ID
@@ -151,7 +151,7 @@ class Admin(commands.Cog):
         await ctx.send(f"Nuked all app commands for guild: {guild.id}")
 
     @commands.command(name="populatemembers")
-    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "BOT_OWNER")
+    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "USER_BOT_OWNER")
     async def populatemembers(self, ctx):
         """Admin only: Populate the user DB with all current guild members."""
         await ctx.send("Starting to populate the members table... This may take a moment.")

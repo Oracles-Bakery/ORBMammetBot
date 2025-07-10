@@ -49,7 +49,7 @@ class AdminEmojiReference(commands.Cog):
         self.bot = bot
 
     @app_commands.command(name="emojiref", description="Show a paginated embed of all application emojis with names (admin only).")
-    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "BOT_OWNER")
+    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "USER_BOT_OWNER")
     async def emojiref(self, interaction: discord.Interaction):
         # Fetch application emojis
         emojis = await self.bot.fetch_application_emojis()

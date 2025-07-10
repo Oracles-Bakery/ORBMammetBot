@@ -28,7 +28,7 @@ GUILD_ID = env_int("GUILD_ID")
 
 # PEOPLE
 USER_ORACLE = env_int("USER_ORACLE")
-BOT_OWNER = env_int("BOT_OWNER")
+USER_BOT_OWNER = env_int("USER_BOT_OWNER")
 # ROLES
 ROLE_GUILDMASTER = env_int("ROLE_GUILDMASTER")
 ROLE_MODERATOR = env_int("ROLE_MODERATOR")
@@ -94,7 +94,7 @@ CATEGORY_DICT = {
 
 if not TOKEN or not TOKEN.strip():
     raise RuntimeError("TOKEN is not set. Bot cannot start.") # Bot API key needs setting
-if not USER_ORACLE or not BOT_OWNER:
+if not USER_ORACLE or not USER_BOT_OWNER:
     raise RuntimeError("Critical user ID(s) missing from environment.") # Server and Bot owner IDs need setting
 if not DATABASE_URL:
     raise RuntimeError("Missing DATABASE_URL.") # Postgres server isn't hooked up

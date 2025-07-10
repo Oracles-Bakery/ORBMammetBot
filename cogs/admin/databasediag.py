@@ -13,7 +13,7 @@ class DatabaseDiag(commands.Cog):
 
     # Test if the database connection is working
     @commands.command(name="testdbconnection", help="Tests the database connection")
-    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "BOT_OWNER")
+    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "USER_BOT_OWNER")
     async def test_db_connection(self, ctx: commands.Context):
         try:
             await ctx.send("Attempting to connect to database...")
@@ -29,7 +29,7 @@ class DatabaseDiag(commands.Cog):
 
     # Find the number of rows in a table
     @commands.command(name="dbrowcount", help="Gets the number of rows in a table")
-    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "BOT_OWNER")
+    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "USER_BOT_OWNER")
     async def db_row_count(self, ctx: commands.Context, tablename: str):
         try:
             await ctx.send("Attempting to connect to database...")
@@ -43,7 +43,7 @@ class DatabaseDiag(commands.Cog):
 
     # List all role categories and their counts
     @commands.command(name="dbrolecategories", help="Lists all role categories and their counts")
-    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "BOT_OWNER")
+    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "USER_BOT_OWNER")
     async def db_role_categories(self, ctx: commands.Context):
         try:
             rows = await postgres.fetch("""
@@ -69,7 +69,7 @@ class DatabaseDiag(commands.Cog):
 
     # Check the most recent entries in a table, defaults to 5
     @commands.command(name="dbrecent", help="Checks the most recent **n** (default 5) created or edited rows in a table")
-    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "BOT_OWNER")
+    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "USER_BOT_OWNER")
     async def db_recent(self, ctx: commands.Context, tablename: str, limit: int = 5):
         try:
             await ctx.send("Attempting to connect to database...")
@@ -90,7 +90,7 @@ class DatabaseDiag(commands.Cog):
 
     # Check database integrity for NULLs in required fields and invalid foreign keys
     @commands.command(name="checkdbintegrity", help="Checks for NULLs in required fields and invalid foreign keys")
-    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "BOT_OWNER")
+    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "USER_BOT_OWNER")
     async def check_db_integrity(self, ctx: commands.Context):
         try:
             issues = []

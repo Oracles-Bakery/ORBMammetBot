@@ -11,7 +11,7 @@ class ShutdownCommand(commands.Cog):
         self.bot = bot
 
     @commands.command(name="shutdown", help="Gracefully shuts down the bot")
-    @is_user_allowed("USER_GUILDMASTER", "USER_ORACLE", "BOT_OWNER")
+    @is_user_allowed("USER_GUILDMASTER", "USER_ORACLE", "USER_BOT_OWNER")
     async def shutdown(self, ctx: commands.Context, inform_admin: bool = False, *, description: str = ""):
         await ctx.send("Shutting down...")
 
@@ -25,7 +25,7 @@ class ShutdownCommand(commands.Cog):
 
         if inform_admin:
             try:
-                admin_user = await self.bot.fetch_user(settings.BOT_OWNER)
+                admin_user = await self.bot.fetch_user(settings.USER_BOT_OWNER)
                 dm_message = (
                     f"Bot shutdown initiated by {ctx.author}.\n"
                     f"Description: {description or 'No description provided.'}"

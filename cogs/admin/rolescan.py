@@ -11,7 +11,7 @@ class RoleScanner(commands.Cog):
         self.bot = bot
 
     @commands.command(name="scanroles")
-    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "BOT_OWNER")
+    @is_user_allowed( "USER_ORACLE", "ROLE_GUILDMASTER", "USER_BOT_OWNER")
     async def scan_roles(self, ctx):
         """Scans all roles in the guild and upserts them into the database."""
         guild: discord.Guild = ctx.guild
