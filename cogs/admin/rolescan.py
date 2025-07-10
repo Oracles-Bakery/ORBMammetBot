@@ -29,7 +29,7 @@ class RoleScanner(commands.Cog):
 
         for role in roles:
             # Skip @everyone and managed roles (e.g., integration/webhook roles)
-            if role.is_default() or role.managed or role.name.strip().startswith("↳"):
+            if role.is_default() or role.managed or role.name.strip().startswith("↓"):
                 skipped += 1
                 logger.debug(f"Skipped role {role.id} - {role.name} (managed or @everyone)")
                 continue
