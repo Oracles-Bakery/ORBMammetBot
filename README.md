@@ -34,8 +34,9 @@ Lorum? I barely ipsum!
 |-------------------------------------------------|:---------:|:------:| ------ |
 | Role selection with dynamic categories          | v1.0.0    | 🟢    | Released |
 | FFXIV Lodestone character verification          | v1.0.0    | 🟢    | Scraping implemented, basic embed |
-| Greeting questions                              | v1.0.0    | 🟣    | Preferred name and favourite colour |
-| XIVAPI integration for item search              | v1.1.0    | 🔵    | Search, autocomplete, lookup |
+| Greeting questions                              | v1.0.0    | 🟢    | Preferred name and favourite colour |
+| Free game alerts                                | v1.0.0    | 🟢    | Free and discounted game alerts, and free weekend events |
+| XIVAPI integration for item search              | v1.2.0    | 🔵    | Search, autocomplete, lookup |
 | Raid Helper                                     | v2.0.0    | 🔵    | Setup for in-game events handling, with per-player class tracking and role assignment |
 | Map Generator                                   | vX.0.0    | ⚪    | Get a map of a duty's loot chests, mob spawns, or an area's loot, gathering, or fate locations |
 | Support Tickets                                 | vX.0.0    | ⚪    | Support requests and GM messaging system with transcript generation and isolated text channel creation |
@@ -43,4 +44,3 @@ Lorum? I barely ipsum!
 | FFXIV game announcements                        | vX.0.0    | 🔵    | Alerts about mogtome events, patch notes, etc... |
 | Discord web dashboard                           | vX.0.0    | ⚪    | Owner settings, role sync, GUI for events and raids |
 | Modular plug-in system                          | vX.0.0    | ⚪    | Easier expansion for open-source crowd |
-
