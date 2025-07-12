@@ -19,7 +19,7 @@ ESSENTIAL_COGS = ["cogs.admin"]
 
 import pathlib
 
-async def bootstrap_schema(conn, sql_path="buildAll.sql"):
+async def bootstrap_schema(conn, sql_path="utils/database/buildAll.sql"):
     sql_file = pathlib.Path(sql_path)
     if not sql_file.exists():
         raise FileNotFoundError(f"SQL schema file not found: {sql_path}")
