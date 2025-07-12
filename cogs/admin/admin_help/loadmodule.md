@@ -1,4 +1,4 @@
-## ~loadmodule <category> <modname>
+## ~loadmodule `<category>` `<modname>`
 
 Loads a specific module (cog) based on folder (`category`) and file (`modname`)
 

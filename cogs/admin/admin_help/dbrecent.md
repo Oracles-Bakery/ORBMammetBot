@@ -1,4 +1,4 @@
-## ~dbrecent <tablename> [limit]
+## ~dbrecent `<tablename>` `[limit]`
 
 Shows the most recently created or edited rows in a database table
 

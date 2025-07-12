@@ -1,4 +1,4 @@
-## ~unloadmodule <category> <modname>
+## ~unloadmodule `<category>` `<modname>`
 
 Unloads a specific module (cog) based on folder (`category`) and file (`modname`)
 

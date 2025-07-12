@@ -1,4 +1,4 @@
-## ~reloadmodule <category> <modname>
+## ~reloadmodule `<category>` `<modname>`
 
 Reloads a specific module (cog) in place
 

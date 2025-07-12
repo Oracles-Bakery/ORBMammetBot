@@ -1,4 +1,4 @@
-## ~dbrowcount <tablename>
+## ~dbrowcount `<tablename>`
 
 Returns the number of rows in a specified database table
 
