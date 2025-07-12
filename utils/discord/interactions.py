@@ -105,6 +105,10 @@ async def assign_roles(interaction: discord.Interaction, selected_names: list[st
         f"Your roles for **{category}** have been updated.",
         ephemeral=True
     )
+    try:
+        await interaction.edit_original_response(view=None)
+    except Exception:
+        pass
 
 # Factory to generate the view
 async def create_dropdown_view(category: str, placeholder: str, member: discord.Member, bot: discord.Client) -> ui.View:

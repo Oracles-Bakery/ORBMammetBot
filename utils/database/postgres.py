@@ -48,6 +48,60 @@ async def fetchrow(query, *args):
     ensure_pool()
     async with _pool.acquire() as conn: # type: ignore
         return await conn.fetchrow(query, *args)
+    
+####################
+### HEALTH CHECK ###
+####################
+
+# Grab the info that a table is built on
+def parse_sql_schema(sql_text):
+    tables = {}
+    create_table_pattern = re.compile(r'CREATE TABLE IF NOT EXISTS (\w+)\s*\((.*?)\);', re.DOTALL | re.IGNORECASE)
+    for match in create_table_pattern.finditer(sql_text):
+        table_name = match.group(1)
+        columns_section = match.group(2)
+        columns = []
+        for col_line in columns_section.splitlines():
+            col_line = col_line.strip()
+            if not col_line or col_line.startswith('--') or 'PRIMARY KEY' in col_line or 'FOREIGN KEY' in col_line:
+                continue
+            col_name = col_line.split()[0]
+            columns.append(col_name)
+        tables[table_name] = columns
+    return tables
+
+# Grab that whol mfer
+async def get_actual_schema():
+    schema = {}
+    rows = await postgres.fetch("""
+        SELECT table_name, column_name
+        FROM information_schema.columns
+        WHERE table_schema='public'
+        ORDER BY table_name, ordinal_position;
+    """)
+    for row in rows:
+        schema.setdefault(row['table_name'], []).append(row['column_name'])
+    return schema
+
+# Compare the schema of the actual table against what is expected
+def compare_schemas(expected, actual):
+    issues = []
+    for table, exp_cols in expected.items():
+        if table not in actual:
+            issues.append(f"Table `{table}` is missing from DB!")
+            continue
+        for col in exp_cols:
+            if col not in actual[table]:
+                issues.append(f"Column `{col}` missing from table `{table}`.")
+    for table in actual:
+        if table not in expected:
+            issues.append(f"Extra table `{table}` present in DB (not in SQL).")
+        else:
+            for col in actual[table]:
+                if col not in expected[table]:
+                    issues.append(f"Extra column `{col}` present in table `{table}`.")
+    return issues
+
 
 
 ######################################
