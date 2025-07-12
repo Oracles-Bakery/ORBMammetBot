@@ -83,6 +83,7 @@ You can think of it like this:
 | Discord web dashboard                           | v2.0.0    | 🔵    | All the features of version 1, now with a GUI! |
 | Map Generator                                   | v2.Y.Z    | ⚪    | Get a map of a duty's loot chests, mob spawns, or an area's loot, gathering, or fate locations |
 | Content Positioning Guides                      | v2.Y.Z    | ⚪    | Not sure where to stand for content? Enjoy a tasty guide for your role! |
+| Eurekan Bestiary Functionality                  | v2.Y.Z    | ⚪    | Grabbing that old svelte app and making it ours for the site |
 
 ---
 
