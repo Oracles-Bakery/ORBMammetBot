@@ -1,6 +1,7 @@
 <div align="center">
 
 # Oracles Bakery Mammet: ORB Discord Bot
+
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Oracles-Bakery/ORBMammetBot)<br/>
 ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/Oracles-Bakery/ORBMammetBot?style=flat&labelColor=161616&color=00be5a)
 ![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr/Oracles-Bakery/ORBMammetBot?style=flat&label=pull%20reqs&labelColor=161616&color=642d96)<br/>
@@ -8,17 +9,20 @@
 ![GitHub Sponsors](https://img.shields.io/github/sponsors/VAMProductions?logo=githubsponsors&label=Github%20Sponsors&labelColor=161616&color=%23EA4AAA)
 
 ### _"Anything for the FC"_
+
 </div>
 
 This is the official repo for the Oracles Bakery Mammet, beloved son of Villicent and famously despised son of Villicent.<br/>
 (It's a discord bot made to be always-free, with open and transparent code for the gang to all read through so they know they're safe, if you're looking for actual info)
+
 ---
 
 ## Quick Start
 
 Looking to get the bot running for yourself? <br/>
 Clone the repo, make your virtual environment and install dependencies, then it's ready to push to your (_totally_ made via V's referral link) [railway.com](https://github.com/sponsors/VAMProductions) environment! <br/>
-*Just don't forget to remove the commenting `#` at **the start** of your terminal's venv script!*
+_Just don't forget to remove the commenting `#` at **the start** of your terminal's venv script!_
+
 ```bash
 git clone https://github.com/Oracles-Bakery/ORBMammetBot.git
 cd ORBMammetBot
@@ -27,10 +31,10 @@ cd ORBMammetBot
 # .\.venv\Scripts\Activate.ps1 # For people using powershell
 pip install -r requirements.txt
 ```
+
 For help wiht your .env file for local machines or the variables of your project on railway, you can check out [`settings.py`](settings.py) to see what environment pulls there are where you see `os.getenv()`.
 
 ---
-
 
 # Feature Roadmap
 
@@ -43,6 +47,7 @@ You can think of it like this:
 `FIX` updates are repairs and tweaks to things that already exist, and will more often than not be a group of updates all at once to make sure you're not getting updates spamming the merges. Current plan is to send a pull request with all the fixes I have at 00:00 (that's midnight for you word-enjoyers) UTC (server time for EU) every Friday for the higher ups to check on and allow unless it's an emergency then it'll be ASAP!
 
 ## Key
+
 | Status | Meaning     | Details |
 |-------:| ----------- | ------- |
 | 🔴     | Blocked     | Something is missing to make this work |
@@ -55,6 +60,7 @@ You can think of it like this:
 | ⚫     | Archived    | Rejected idea, will be worked on privately and pushed to sponsor repo |
 
 ## Roadmap
+
 | Feature                                         | Target    | Status | Notes |
 |-------------------------------------------------|:---------:|:------:| ----- |
 | Dynamic Role Selection                          | v1.0.0    | 🟢    | Embed that dynamically loads roles and populates categories and lists for user role management |
@@ -79,10 +85,11 @@ You can think of it like this:
 | Content Positioning Guides                      | v2.Y.Z    | ⚪    | Not sure where to stand for content? Enjoy a tasty guide for your role! |
 
 ---
+
 <div align="center">
-	<a href="github.com/Oracles-Bakery/ORBMammetBot">Oracles Bakery Mammet</a> © 2025 by <a href="github.com/VAMProductions">Villicent</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a><br/>
-	<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
-	<img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
-	<img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
-	<img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
+<a href="github.com/Oracles-Bakery/ORBMammetBot">Oracles Bakery Mammet</a> © 2025 by <a href="github.com/VAMProductions">Villicent</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a><br/>
+    <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
+    <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
+    <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
+    <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
 </div>
