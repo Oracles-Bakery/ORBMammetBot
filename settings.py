@@ -21,7 +21,8 @@ def env_int(name):
 
 # TOKENS N SHIT
 TOKEN = os.getenv("TOKEN")
-BOT_USER_AGENT = os.getenv("BOT_USER_AGENT")
+XIVAPI_USERAGENT = os.getenv("XIVAPI_USERAGENT")
+FREESTUFF_HEADER = os.getenv("FREESTUFF_HEADER")
 
 # GUILD
 GUILD_ID = env_int("GUILD_ID")
