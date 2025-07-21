@@ -1,11 +1,21 @@
 <div align="center">
 
 # Oracles Bakery Mammet: ORB Discord Bot
-![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Oracles-Bakery/ORBMammetBot)<br/>
-![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/Oracles-Bakery/ORBMammetBot?style=flat&labelColor=161616&color=00be5a)
-![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr/Oracles-Bakery/ORBMammetBot?style=flat&label=pull%20reqs&labelColor=161616&color=642d96)<br/>
-![GitHub Issues or Pull Requests by label](https://img.shields.io/github/issues/Oracles-Bakery/ORBMammetBot/Premium%20Features?style=flat&label=Paid-Only%20Features&labelColor=%23161616&color=%23d5cb2b)
-![GitHub Sponsors](https://img.shields.io/github/sponsors/VAMProductions?logo=githubsponsors&label=Github%20Sponsors&labelColor=161616&color=%23EA4AAA)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/Oracles-Bakery/ORBMammetBot?style=flat&logo=python&logoColor=%233776AB&label=Latest%20Snakepit%20Activity&labelColor=161616&color=00be5a)
+<br/>
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/Oracles-Bakery/ORBMammetBot?style=flat&logo=python&logoColor=%23ffde57&label=Total%20Snakepit%20Activity&labelColor=161616&color=00be5a)
+<br/>
+<br/>
+![GitHub issue custom search](https://img.shields.io/github/issues-search?query=repo%3AOracles-Bakery%2FORBMammetBot%20label%3A004completed%20&style=flat&label=Completed%20Features&labelColor=161616&color=00be5a)
+<br/>
+![GitHub issue custom search](https://img.shields.io/github/issues-search?query=repo%3AOracles-Bakery%2FORBMammetBot%20label%3A006progressing&style=flat&label=Feature%20Workload%3A&labelColor=161616&color=642d96)
+![GitHub issue custom search](https://img.shields.io/github/issues-search?query=repo%3AOracles-Bakery%2FORBMammetBot%20label%3A002backlog&style=flat&label=Delayed%20Features&labelColor=161616&color=DC9619)
+<br/>
+![GitHub Issues or Pull Requests](https://img.shields.io/github/issues-pr/Oracles-Bakery/ORBMammetBot?style=flat&label=Pull%20Requests&labelColor=161616&color=1E82F0)
+<br/>
+<br/>
+![GitHub issue custom search](https://img.shields.io/github/issues-search?query=repo%3AOracles-Bakery%2FORBMammetBot%20label%3APremium%20Features?style=flat&label=Paid%20Features&labelColor=161616&color=d5cb2b)
+![GitHub Sponsors](https://img.shields.io/github/sponsors/VAMProductions?logo=githubsponsors&label=Github%20Sponsors&labelColor=161616&color=EA4AAA)
 
 ### _"Anything for the FC"_
 </div>
