@@ -114,3 +114,6 @@ def parse_colour_string(
     except Exception as e:
         if logger: logger.exception(f"Failed to parse color string '{colour_str}': {e}")
     return DISCORD_DEFAULT_COLOR_INT
+
+def hex_to_discord_color(hex_str: str) -> discord.Color:
+    return discord.Color(int(hex_str.lstrip("#"), 16))
