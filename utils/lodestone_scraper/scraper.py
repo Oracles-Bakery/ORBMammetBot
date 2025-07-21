@@ -1,3 +1,4 @@
+# utils/lodestone_scraper/scraper.py
 import aiohttp
 from bs4 import BeautifulSoup
 from .uris import applicable_uris

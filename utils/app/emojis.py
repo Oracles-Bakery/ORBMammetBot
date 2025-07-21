@@ -1,3 +1,4 @@
+# utils/app/emojis.py
 import discord
 
 async def get_app_emojis_by_category(bot: discord.Client):

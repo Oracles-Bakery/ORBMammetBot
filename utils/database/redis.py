@@ -1,4 +1,4 @@
-# utils/rediscache.py
+# utils/database/redis.py
 import redis.asyncio as redis
 import settings 
 

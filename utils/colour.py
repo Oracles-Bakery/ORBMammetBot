@@ -1,3 +1,4 @@
+# utils/colour.py
 """
 Utility functions for color conversions and parsing color strings.
 I made this to let people choose CMYK colours as their fav but it might be useful for artists down the line?

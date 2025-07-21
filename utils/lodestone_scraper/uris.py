@@ -1,3 +1,4 @@
+# utils/lodestone_scraper/uris.py
 applicable_uris = {
     "freecompany/focus.json": "https://%s.finalfantasyxiv.com/lodestone/freecompany/%s/",
     "freecompany/freecompany.json": "https://%s.finalfantasyxiv.com/lodestone/freecompany/%s/",
