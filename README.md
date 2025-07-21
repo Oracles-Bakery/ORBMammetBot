@@ -27,7 +27,7 @@ cd ORBMammetBot
 # .\.venv\Scripts\Activate.ps1 # For people using powershell
 pip install -r requirements.txt
 ```
-For help wiht your .env file for local machines or the variables of your project on railway, you can check out [`settings.py`](settings.py) to see what environment pulls there are where you see `os.getenv()`.
+For help with your .env file for local machines or the variables of your project on railway, you can check out [`settings.py`](settings.py) to see what environment pulls there are where you see `os.getenv()`.
 
 ---
 
